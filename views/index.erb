@@ -1,0 +1,16 @@
+<ul>
+  <% @categories.each do |category| %>
+    <li>
+      <%= category.slug %>
+      <ul>
+        <% category.articles.each do |article| %>
+          <li>
+            <a href="/<%= category.slug %>/<%= article.slug %>">
+              <%= article.title %>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
