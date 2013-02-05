@@ -1,0 +1,87 @@
+body {
+  font: 16px/24px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-family: "Futura LT";
+  line-height: 60px;
+  margin: 0;
+}
+
+header {
+  padding: 40px 0;
+  text-align: center;
+  background-color: #EEE;
+}
+
+header h1 a {
+  color: #234;
+
+}
+
+a {
+  color: #06C;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+.notice {
+/*  background-color: #FFC;*/
+  color: rgba(0,0,0,0.8);
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+}
+
+.span1 {
+  width: 220px;
+  margin-left: 20px;
+  float: left;
+
+}
+
+.foo {
+
+  margin-left: -20px;
+}
+
+ul {
+  padding: 0;
+    list-style-type: none;
+}
+ul ul {
+  font-size: 14px;
+}
+ul ul li {
+
+}
+
+.search-input {
+  width: 100%;
+  font-size: 20px;
+  line-height: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  padding: 9px 9px;
+  box-sizing: border-box;
+}
+
+.search-input:focus {
+  border-color: #06C;
+
+}
+
+form {
+  margin-top: -25px;
+
+}

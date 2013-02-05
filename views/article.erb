@@ -1,0 +1,19 @@
+<% content_for :head do %>
+  <meta property="st:title" content="<%=h @article.title %>" />
+  <meta property="st:section" content="<%=h @article.category.name %>" />
+  <meta property="st:type" content="article" />
+<% end %>
+<aside>
+  <ul>
+    <% @article.category.siblings.each do |category| %>
+      <li>
+        <%=h category.name %>
+      </li>
+    <% end %>
+  </ul>
+
+<div class="container">
+  <div class="article-body">
+    <%= @article.body %>
+  </div>
+</div>

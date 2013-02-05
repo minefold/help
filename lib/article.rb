@@ -10,6 +10,10 @@ class Article
     @path = path
   end
 
+  def dir
+    File.dirname(path)
+  end
+
   def slug
     File.basename(path, '.md')
   end
@@ -28,6 +32,22 @@ class Article
 
   def title
     document.css('h1:first').text
+  end
+
+  def category
+    @category ||= Category.new(dir)
+  end
+
+  def mtime
+    cmd = Shellwords.join(['git', 'log',
+      '--diff-filter=M',
+      '--format="format:%ad"',
+      '--date=iso',
+      '--',
+      path]
+    )
+    puts cmd
+    Time.parse(`#{cmd}`)
   end
 
 end
