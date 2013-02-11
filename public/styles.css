@@ -13,9 +13,14 @@ header {
   margin-bottom: 20px;
 }
 
+header h1 {
+  font-size: 28px;
+}
+
 header h1 a {
   color: #fff;
 }
+
 header h1 a:hover {
   text-decoration: none;
   color: #fff;
@@ -26,11 +31,6 @@ header h1 a:hover {
   height: 30px;
 }
 
-a {
-  color: #06C;
-  text-decoration: none;
-}
-
-p {
-  margin: 0;
+.article-body h1 {
+  font-size: 30px;
 }
