@@ -1,43 +1,20 @@
-<form class="container">
-  <input type="text" id="st-search-input" class="search-input" />
-</form>
-
-<div id="st-results-container">
-</div>
-
 <div class="container">
-  <ul class="foo">
-    <% @categories.each do |category| %>
-      <li class="span1">
-        <%=h category.name %>
-        <ul>
-          <% category.articles[0..3].each do |article| %>
-            <li>
-              <a href="/<%= category.slug %>/<%= article.slug %>">
-                <%=h article.title %>
-              </a>
-            </li>
-          <% end %>
-        </ul>
-      </li>
-    <% end %>
-  </ul>
+  <% @categories.each_slice(2) do |row| %>
+    <div class="row">
+      <% row.each do |category| %>
+        <div class="span6">
+          <h3><%=h category.name %></h3>
+          <ul class="unstyled">
+            <% category.articles[0..3].each do |article| %>
+              <li>
+                <a href="/<%= category.slug %>/<%= article.slug %>">
+                  <%=h article.title %>
+                </a>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
-
-<script type="text/javascript">
-  var Swiftype = window.Swiftype || {};
-  (function() {
-    Swiftype.key = 'emJYsKAtykqWp5G4vUcL';
-    Swiftype.inputElement = '#st-search-input';
-    Swiftype.resultContainingElement = '#st-results-container';
-    Swiftype.attachElement = '#st-search-input';
-    Swiftype.renderStyle = 'overlay';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = '//swiftype.com/embed.js';
-    var entry = document.getElementsByTagName('script')[0];
-    entry.parentNode.insertBefore(script, entry);
-  }());
-</script>

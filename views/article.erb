@@ -3,17 +3,22 @@
   <meta property="st:section" content="<%=h @article.category.name %>" />
   <meta property="st:type" content="article" />
 <% end %>
-<aside>
-  <ul>
-    <% @article.category.siblings.each do |category| %>
-      <li>
-        <%=h category.name %>
-      </li>
-    <% end %>
-  </ul>
 
 <div class="container">
   <div class="article-body">
     <%= @article.body %>
   </div>
+  
+  <hr/>
+
+  <h2>Related Questions</h2>
+  <ul class="unstyled">
+    <% @article.category.articles.each do |article| %>
+      <li>
+        <a href="<%= article.category.slug %>/<%= article.slug %>">
+          <%=h article.title %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
 </div>

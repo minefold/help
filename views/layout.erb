@@ -1,23 +1,60 @@
 <!DOCTYPE html>
+<html lang="en">
   <head>
     <title><%=h @_title || 'Minefold Help' %></title>
-    <link href="/normalize.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="/bootstrap/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
     <link href="/styles.css" media="all" rel="stylesheet" type="text/css" />
     <%= yield_content :head %>
   </head>
   <body>
     <header>
-      <h1><a href="/">Minefold Help</a></h1>
+      <div class="container">
+        <h1><a href="/">Minefold Help</a></h1>
+      </div>
     </header>
+        
+    <div class="container">
+      <form>
+        <div class="controls">
+          <input type="text" id="st-search-input" class="span12" placeholder="Search..." />
+        </div>
+      </form>
+
+      <div id="st-results-container">
+      </div>
+    </div>
 
     <%= yield %>
 
+    <hr/>
+    
     <footer>
-      <p>
-        This site is under construction and you can help us build it. The code is <a href="https://github.com/minefold/help">open-source</a> and we happily accept pull requests.
-      </p>
-
+      <div class="container">
+        <p>
+          This site is under construction and you can help us build it. The code is <a href="https://github.com/minefold/help">open-source</a> and we happily accept pull requests.
+        </p>
+      </div>
     </footer>
+    
+
+    <script type="text/javascript">
+      var Swiftype = window.Swiftype || {};
+      (function() {
+        Swiftype.key = 'emJYsKAtykqWp5G4vUcL';
+        Swiftype.inputElement = '#st-search-input';
+        Swiftype.resultContainingElement = '#st-results-container';
+        Swiftype.attachElement = '#st-search-input';
+        Swiftype.renderStyle = 'overlay';
+
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = '//swiftype.com/embed.js';
+        var entry = document.getElementsByTagName('script')[0];
+        entry.parentNode.insertBefore(script, entry);
+      }());
+    </script>
+    
 
   </body>
 </html>
