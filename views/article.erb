@@ -8,17 +8,19 @@
   <div class="article-body">
     <%= @article.body %>
   </div>
-  
-  <hr/>
 
-  <h3>Related Questions</h3>
-  <ul class="unstyled">
-    <% @article.category.articles.each do |article| %>
-      <li>
-        <a href="<%= article.category.slug %>/<%= article.slug %>">
-          <%=h article.title %>
-        </a>
-      </li>
-    <% end %>
-  </ul>
+  <% if @related_articles.any? %>
+    <hr/>
+  
+    <h3>Related Questions</h3>
+    <ul class="unstyled">
+      <% @related_articles.each do |article| %>
+        <li>
+          <a href="/<%= article.category.slug %>/<%= article.slug %>">
+            <%=h article.title %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>

@@ -22,5 +22,7 @@ end
 
 get ArticleRouter.new do |path|
   @article = Article.new(path)
+  @related_articles = @article.category.articles.reject{|a| a.slug == @article.slug}
+
   erb :article
 end
