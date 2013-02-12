@@ -9,6 +9,7 @@ after_success:
 
 env:
   global:
-  - secure: ! 'erPSj+PQ2NNPSUt/goJjL20JsRV9grfCTb5uNmGFdtr+zfCe8Zau74ZFu0CY
-      NY4Y+V7vFJTlkeBY6DvguBQ88eq3MGmMNo83ebJ9rKSa6WAmydGku3owVotD
-      0TigQc4I/3hpx/KbrSZbC8FkHhpzK3FGlsDrFChvcJodoixkLGk='
+    - HEROKU_USERNAME="deployinator@minefold.com"
+    - secure: ! 'erPSj+PQ2NNPSUt/goJjL20JsRV9grfCTb5uNmGFdtr+zfCe8Zau74ZFu0CY
+        NY4Y+V7vFJTlkeBY6DvguBQ88eq3MGmMNo83ebJ9rKSa6WAmydGku3owVotD
+        0TigQc4I/3hpx/KbrSZbC8FkHhpzK3FGlsDrFChvcJodoixkLGk='
